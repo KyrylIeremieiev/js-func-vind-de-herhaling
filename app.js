@@ -7,31 +7,30 @@ class HerhaalApp
         let canvas = document.getElementById("canvasId");
         let g = canvas.getContext("2d");
 
-
+        function boom(g, x, y)
+        {
         //boompje
-        let boomx = 50;
-        let boomy = 50;
         g.fillStyle = "green"
-        g.fillRect(boomx, boomy, 12, 20);
+        g.fillRect(x, y, 12, 20);
         g.fillStyle = "brown"
-        g.fillRect(boomx + 4, boomy + 20, 4, 6);
+        g.fillRect(x + 4, y + 20, 4, 6);
+        }
 
+        function auto(g, autox, autoy)
+        {
+            g.fillStyle = "red"
+            g.fillRect(autox, autoy+1, 20, 6);
+            g.fillStyle = "grey"
+            g.fillRect(autox + 2, autoy + 5, 4, 4);
+            g.fillRect(autox + 14, autoy + 5, 4, 4);
+        }
 
+        //boom1
+        boom(g, 50, 50)
         //boompje2
-        let boom2x = 80;
-        let boom2y = 50;
-        g.fillStyle = "green"
-        g.fillRect(boom2x, boom2y, 12, 20);
-        g.fillStyle = "brown"
-        g.fillRect(boom2x + 4, boom2y + 20, 4, 6);
-
-        //boompje3
-        let boom3x = 80;
-        let boom3y = 50;
-        g.fillStyle = "green"
-        g.fillRect(boom3x, boom3y, 12, 20);
-        g.fillStyle = "brown"
-        g.fillRect(boom3x + 4, boom3y + 20, 4, 6);
+        boom(g, 80, 50)
+        //boom3
+        boom(g, 80, 50)
 
         //weg
         g.fillStyle = "black"
@@ -52,23 +51,10 @@ class HerhaalApp
         g.fillRect(200, 88, 10, 4);
 
         //auto
-        let autox = 0;
-        let autoy = 80;
-        g.fillStyle = "red"
-        g.fillRect(autox, autoy+1, 20, 6);
-        g.fillStyle = "grey"
-        g.fillRect(autox + 2, autoy + 5, 4, 4);
-        g.fillRect(autox + 14, autoy + 5, 4, 4);
-
+        auto(g, 0, 80)
 
         //auto 2
-        let auto2x = 100;
-        let auto2y = 90;
-        g.fillStyle = "green"
-        g.fillRect(auto2x, auto2y + 1, 20, 6);
-        g.fillStyle = "grey"
-        g.fillRect(auto2x + 2, auto2y + 5, 4, 4);
-        g.fillRect(auto2x + 14, auto2y + 5, 4, 4);
+        auto(g, 100, 90)
 
     }
 }
